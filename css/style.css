@@ -21,44 +21,41 @@ body {
    2. Cabeçalho (Header)
    ========================================================================== */
 .main-header {
-    background-color: #1a1a2e;
-    color: #ffffff;
-    padding: 1rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between; /* Logo na esquerda, menu na direita */
+  align-items: center;           /* Alinha tudo ao centro verticalmente */
+  padding: 20px 5%;
+  background-color: #111;        /* Ajuste para a cor do seu site */
+  color: #fff;
 }
 
-.header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.nav-menu {
+  display: flex;
+  gap: 25px;                     /* Espaço firme entre os links */
 }
 
-.brand-name {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #00f2fe;
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;           /* Impede que o texto do link quebre de linha */
 }
 
-.main-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-}
+/* --- SOLUÇÃO PARA CELULARES (Telas até 768px) --- */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;      /* Transforma o alinhamento em vertical */
+    gap: 15px;                   /* Dá espaço entre a logo e os links */
+    text-align: center;
+    padding: 15px 2%;
+  }
 
-.main-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.main-nav a:hover {
-    color: #00f2fe;
+  .nav-menu {
+    width: 100%;
+    justify-content: center;     /* Centraliza os links no meio da tela */
+    flex-wrap: wrap;             /* Se a tela for muito pequena, os links quebram de forma organizada */
+    gap: 15px;
+  }
 }
 
 /* ==========================================================================
